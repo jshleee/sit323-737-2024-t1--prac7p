@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s  # time between running the check
+      timeout: 10s   # time to wait before considering the check to have hung
+      retries: 3     # number of consecutive failures needed to consider the service unhealthy
+      start_period: 40s  # initial delay before starting health checks
