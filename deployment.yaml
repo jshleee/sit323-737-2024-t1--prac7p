@@ -13,7 +13,7 @@ spec:
         app: nodejs
     spec:
       containers:
-      - name: nodejs
-        image: seoheelee6.1p
+      - name: 61p
+        image: jshlee/seoheelee6.1p
         ports:
         - containerPort: 3000
